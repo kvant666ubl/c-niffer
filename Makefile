@@ -6,4 +6,4 @@ cniffer: main.c
 
 clean:
 	$(info Clean done!)
-	rm main.o
+	rm data.log
