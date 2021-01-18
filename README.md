@@ -90,7 +90,7 @@ Usage information and examples.
 
 ## Examples
 ### Results example
-When ***cniffer*** is working, all packages are writing in a log.txt file with specific options. 
+When ***cniffer*** is working, all packages are writing in ```/var/log/syslog``` file with specific options. 
 Here is an example of one TCP packet:
 ```
 ***********************TCP Packet*************************
@@ -153,7 +153,7 @@ We need select our wireless device, according to ***available devices***. Here, 
 ```
 Results are logging now. If you want to see how it changing:
 ```sh
-$ tail -f -n 20 /var/log/syslog  
+$ tail -f -n 20 /var/log/syslog
 ```
 
 ### Wired sniffing example
