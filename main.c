@@ -56,15 +56,6 @@ int main (int argc, char **argv)
 	count = 1;
 	int c;
 	uint8_t action = 0;
-
-
-    /* Pipe-Part */
-    int pipefds[4];
-    int returnstatus = pipe(pipefds);
-    if (returnstatus == -1) {
-       printf("Unable to create pipe\n");
-       return 1;
-    }
     
 
     /* Our process ID and Session ID */
