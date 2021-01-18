@@ -78,7 +78,7 @@ The packets with different protocol are being sniffed from ```--start``` call on
 ### --stop
 Capturing stopped. Deamon should handle signal from CLI (```SIGSTOP```).
 ### --show
-Display in console number of packets received from some ip address, searching it in log.txt file with time complexity ```log(N)``` for search.
+Display in console number of packets received from some ip address, searching it in syslog file with time complexity ```log(N)``` for search.
 ### --select
 Select network interface for sniffing available list can search in --help (eth0, wlan0, ethN, wlanN e.g.) from 1 to N (see dev-tab).
 ### --stat
@@ -88,8 +88,8 @@ Allows to run with printable packets mode with printing on console. Option ```-P
 ### --help
 Usage information and examples.
 
-## examples
-### results example
+## Examples
+### Results example
 When ***cniffer*** is working, all packages are writing in a log.txt file with specific options. 
 Here is an example of one TCP packet:
 ```
@@ -146,22 +146,17 @@ Data Payload
 
 ###########################################################
 ```
-### wireless sniffing example
+### Wireless sniffing example
 We need select our wireless device, according to ***available devices***. Here, I use wlp2s0:
 ```sh
 # ./cniffer --select 1
 ```
-Results are logging now. But if you want to see how it changing:
+Results are logging now. If you want to see how it changing:
 ```sh
-# ./cniffer --select 1 --mode P  
-```
-And you should see:
-```
-[SNIFFING FROM  <your device> INTERFACE]
-TCP : 211   UDP : 1658   Others : 0   Total : 1869
+$ tail -f -n 20 /var/log/syslog  
 ```
 
-### wired sniffing example
+### Wired sniffing example
 Simply run this line to snif your eth0 or enp1s0 e.g.:
 ```sh
 # ./cniffer --start 
