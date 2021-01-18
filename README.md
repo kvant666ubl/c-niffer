@@ -1,8 +1,18 @@
+<p align="center">
+    <img src="https://img.icons8.com/color/452/lucifer.png"
+        height="130">
+</p>
+
+<p align="center">
+        <img src="https://img.shields.io/github/license/kvant666ubl/c-niffer" alt="License: GPL v3"></a>
+        <img src="https://img.shields.io/github/forks/kvant666ubl/c-niffer" alt="forks"></a>
+        <img src="https://img.shields.io/github/stars/kvant666ubl/c-niffer" alt="stars"></a>
+        <img src="https://img.shields.io/github/issues/kvant666ubl/c-niffer" alt="issues"></a>
+</p>
+
+
 # c-niffer
 A daemon that collects statistic about network traffic written in C using libpcap.
-
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Contents
 - [Release](#release)
@@ -10,7 +20,7 @@ A daemon that collects statistic about network traffic written in C using libpca
   * [Install dependencies](#install-dependencies)
   * [Installation from source](#installation-from-source)
 - [CLI](#cli)
-  * [flags](#flags)
+  * [Flags](#flags)
       + [--start](#--start)
       + [--stop](#--stop)
       + [--show](#--show)
@@ -18,14 +28,13 @@ A daemon that collects statistic about network traffic written in C using libpca
       + [--stat](#--stat)
       + [--mode](#--mode)
       + [--help](#--help)
-  * [examples](#examples)
-    + [results example](#results-example)
-    + [wireless sniffing example](#wireless-sniffing-example)
-    + [wired sniffing example](#wired-sniffing-example)
+  * [Examples](#examples)
+    + [Results example](#results-example)
+    + [Wireless sniffing example](#wireless-sniffing-example)
+    + [Wired sniffing example](#wired-sniffing-example)
   
 ## Release
-A daemon would be implemented as a packet sniffer to capture data from a particular networking interface. Now it is a simple executsble file with a few CLI options. It saves all of the incoming packets to a log.txt file for further analysis - it should giving all collected statistics for particular interface and print number of packets received from ip address. Plans to implement cli like another process that interacts with the daemon.
-
+A daemon would be implemented as a packet sniffer to capture data from a particular networking interface. Now it is daemon with CLI. It saves all of the incoming packets to the ```/var/log/syslog``` path for further analysis - it should giving all collected statistics for particular interface and print the number of packets received from ip address.
 
 
 ## Installation
@@ -43,7 +52,7 @@ $ git clone https://github.com/kvant666ubl/c-niffer.git
 2. Go to root of the cniffer repo. Compile and run with ```--help``` of ```-h``` option:
 ```sh
 $ make all
-$ ./cniffer --help  
+$ sudo ./cniffer --help  
 ```
 You must see the functional description and your personal available network devices like:
 ```
@@ -58,8 +67,7 @@ You must see the functional description and your personal available network devi
 8. usbmon1 - USB bus number 1
 9. usbmon2 - USB bus number 2
 ```
-Note that: when you will run ./cniffer to start pcap loop (sniffing) - you need root privileges.
-
+Note that: when you will run ./cniffer to start pcap loop - ```you need root privileges```.
 
 
 ## CLI
